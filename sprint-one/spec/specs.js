@@ -124,6 +124,7 @@ define([
         queue.enqueue('a');
         queue.enqueue('b');
         queue.dequeue();
+
         expect(queue.size()).to.equal(1);
       });
 
