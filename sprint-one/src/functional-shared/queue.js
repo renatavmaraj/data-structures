@@ -5,11 +5,9 @@ var Queue = function() {
   someInstance.storage = {};
   _.extend(someInstance, queueMethods);
   return someInstance;
-
   };
 
   var queueMethods = {};
-
   queueMethods.enqueue = function(value) {
     var currentKey = Object.keys(this.storage).length;
     this.storage[currentKey] = value;
