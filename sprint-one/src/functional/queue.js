@@ -8,7 +8,7 @@ var Queue = function() {
 
   someInstance.enqueue = function(value) {
     var currentKey = Object.keys(storage).length;
-    storage[currentKey]=value;
+    storage[currentKey] = value;
   };
 
   someInstance.dequeue = function() {

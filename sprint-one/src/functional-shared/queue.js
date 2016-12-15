@@ -3,32 +3,32 @@ var Queue = function() {
   // but try not not reference your old code in writing the new style.
   var storage {};
 
-  storage.oldest= 0;
-  storage.newest = 0;
+//   storage.oldest= 0;
+//   storage.newest = 0;
 
-  _.extend(storage, queueMethods);
+//   _.extend(storage, queueMethods);
 
-  return storage;
-};
+//   return storage;
+// };
 
-var queueMethods = {
+// var queueMethods = {
 
-enqueue : function(){
-  this.storage[newest] = value;
-  this.newest ++;
-},
+// enqueue : function(){
+//   this.storage[newest] = value;
+//   this.newest ++;
+// },
 
-dequeue : function() {
-  var results = this.storage[oldest];
-  if(results){
-    oldest++;
-  }
-  return results;
-},
+// dequeue : function() {
+//   var results = this.storage[oldest];
+//   if(results){
+//     oldest++;
+//   }
+//   return results;
+// },
 
-size : function() {
-  return newest - oldest;
-}
+// size : function() {
+//   return newest - oldest;
+// }
 
 };
 
