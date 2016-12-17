@@ -1,63 +1,52 @@
-// var BinarySearchTree = function(value) {
-//   var newTree = Object.create(bstMethods);
-//   newTree.value = value;
-//   newTree.parent = null;
-//   newTree.left = null;
-//   newTree.right = null;
-
-//   return newTree;
-// };
-
-// var bstMethods = {}
-// bstMethods.insert = function(value) {
-//     // if (this.root.value > value) { //if true, we create a left child
-//     //   if (!this.root.left) { //If no current children
-//     //     var child = new Node(value);
-//     //     this.root.left = child;
-//     //     child.parent = this.root;
-//     //   } else {
-//     //     this.root.left.insert(value);
-//     //   }
-
-//     // } else { //create right child
-//     //   if (!this.root.right) { //if no current children
-//     //     var child = new Node(value);
-//     //     this.root.right = child;
-//     //     child.parent = this.root;
-//     //   } else {
-//     //     this.root.right.insert(value);
-//     //   }
-//     // }
-
-//     return value;
-//   };
-// bstMethods.contains = function(value) {
-//     return value;
-//   };
-
-// bstMethods.depthFirstLog = function(value) {
-//     return value;
-//   };
-
-
-
 var BinarySearchTree = function(value) {
-  var bstree = {};
-  this.value = value;
-  this.parent = null;
-  this.left = null;
-  this.right = null;
+  var bstTree = {};
+  bstTree.value = value;
+  bstTree.left = null;
+  bstTree.right = null;
 
-  bstree.insert = function(value) {
-    // code for method1 here
-  }
+  bstTree.insert = function(value) {
+    if (this.value > value) { //if true, we create a left child
+      if (!this.left) { //If no current children
+        var child = BinarySearchTree(value);
+        this.left = child;
+      } else {
+        this.left.insert(value);
+      }
 
-  bstree.contains = function(value) {
-    // code for method2 here
-  }
+    } else { //create right child
+      if (!this.right) { //if no current children
+        var child = BinarySearchTree(value);
+        this.right = child;
+      } else {
+        this.right.insert(value);
+      }
+    }
 
-  bstree.depthFirstLog = function(value) {
+    return value;
+  };
 
-  }
-  return bstree;
+  bstTree.contains = function(target) {
+    //base case
+    if (this.value === target) { //target found
+      return true;
+    }
+    if (!this.left && !this.right) { //no more children
+      return false;
+    }
+    return (this.value > target) ? this.left.contains(target) : this.right.contains(target);
+  };
+
+  bstTree.depthFirstLog = function(cb) {
+    //base case
+    cb(this.value);
+    if (this.left || this.right) {
+      if (this.left) {
+        this.left.depthFirstLog(cb);
+      }
+      if (this.right) {
+        this.right.depthFirstLog(cb);
+      }
+    }
+  };
+  return bstTree;
 };
