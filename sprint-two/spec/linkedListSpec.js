@@ -52,4 +52,7 @@ describe('linkedList', function() {
   });
 
   // add more tests here to test the functionality of linkedList
+  it('should not change when removing a value that does not exist', function () {
+    expect((linkedList.removeHead()).to.be.null);
+  });
 });

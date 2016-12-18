@@ -50,3 +50,7 @@ var BinarySearchTree = function(value) {
   };
   return bstTree;
 };
+
+/*
+Time Complexity: 0(n) Linear
+*/

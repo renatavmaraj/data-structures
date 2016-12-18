@@ -28,8 +28,9 @@ var LinkedList = function() {
     if (currentNode) {
       var newNode = currentNode.next;
       this.head = newNode;
+      return currentNode.value;
     }
-    return currentNode.value;
+    return null;
   };
 
   list.contains = function(target) {
